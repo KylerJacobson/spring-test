@@ -26,5 +26,9 @@ steps:
     ./mvnw package
   displayName: 'Build Jar'
 
-- script: docker build -t springio/gs-spring-boot-docker .
+- script: docker build -t springio/gs-spring-boot-docker kylers.azurecr.io/springio/spring-test
   displayName: 'Build Docker Image'
+
+- script: |
+    docker login kylers.azurecr.io -u $(acr-user) -p $(acr-pass)
+    docker push kylers.azurecr.io/springio/spring-test
