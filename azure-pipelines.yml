@@ -32,4 +32,4 @@ steps:
 - script: |
     docker login kylers.azurecr.io -u $(acr-user) -p $(acr-pass)
     docker tag springio/gs-spring-boot-docker kylers.azurecr.io/springio/gs-spring-boot-docker
-    docker push kylers.azurecr.io/springio/spring-boot-docker:latest
+    docker push kylers.azurecr.io/springio/gs-spring-boot-docker:latest
